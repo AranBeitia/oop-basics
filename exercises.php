@@ -30,8 +30,27 @@ class Vehicle {
 	}
 }
 
-$car = new Vehicle("M135 drive", "1600cc", "BMW", "black");
+class AirVehicle extends Vehicle {
+	public $wings;
+
+	public function __construct($name, $motor, $brand, $color, $wings) {
+		parent::__construct($name, $motor, $brand, $color);
+		$this->wings = $wings;
+		$this->color = 'pink';
+	}
+
+	public function fly () {
+		echo 'The ' . $this->name . ' can fly ';
+	}
+
+	public function brake () {
+		echo 'This ' . $this->name . ' can not brake ';
+	}
+}
+
+$car = new Vehicle("M135 drive", "1600cc", "BMW", "blue");
 $motorbike = new Vehicle('CBR', '600cc', 'Honda', 'red');
+$airplane = new AirVehicle('Hawker Hurricane', '1025hp', 'Rolls Royce', 'black', 2);
 
 // $car-> name = "M135 drive";
 // $car-> motor = "1600cc";
@@ -50,7 +69,18 @@ var_dump($car);
 var_dump($motorbike);
 
 echo $car->startEngine();
+echo "\n";
 echo $car->accelerate();
+
 echo $car->brake();
-//echo $motorbike->accelerate();
+
+echo $motorbike->accelerate();
+
+echo $airplane->fly();
+echo "\n";
+var_dump($airplane);
+
+echo $airplane->brake();
+
+
 
