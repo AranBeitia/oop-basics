@@ -50,7 +50,6 @@ class Vehicle {
 	}
 }
 
-
 $car = new Vehicle("M135 drive", "1600cc", "BMW", "blue");
 $motorbike = new Vehicle('CBR', '600cc', 'Honda', 'red');
 
